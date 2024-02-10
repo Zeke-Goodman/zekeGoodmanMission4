@@ -1,24 +1,35 @@
 ﻿@{
+    // Setting the title for the view
     ViewData["Title"] = "Calculator";
 }
-<h1>@ViewData[""]</h1>
+<!-- Displaying the title -->
+<h1>@ViewData["Title"]</h1>
 
+<!-- Container for the calculator -->
 <div class="container" style="width: 50%">
+    <!-- Title for the calculator -->
     <h1 class="text-center">Calculate How Much It Would Cost To Be Tutored!</h1>
+    <!-- Description of the calculator -->
     <p class="lead">Welcome to our tutoring cost calculator! Use this tool to estimate the cost of hiring a tutor to teach you how to play pickleball.</p>
+    <!-- Form for input -->
     <form id="hourlyRateForm">
+        <!-- Input for number of hours -->
         <div class="mb-3">
             <label for="hours" class="form-label">Enter number of hours:</label>
             <input type="number" class="form-control" id="hours" name="hours" min="0" required>
+            <!-- Error message for invalid input -->
             <div id="hoursError" class="form-text" style="color: red;"></div>
         </div>
+        <!-- Displaying hourly rate (read-only) -->
         <div class="mb-3">
             <label for="hourlyRate" class="form-label">Hourly rate:</label>
             <input type="text" class="form-control" id="hourlyRate" name="hourlyRate" value="30" readonly>
         </div>
+        <!-- Button to calculate total -->
         <div class="mb-3">
             <button type="button" class="btn btn-primary" onclick="calculateTotal()">Calculate Total</button>
         </div>
+        <!-- Displaying total (read-only) -->
         <div class="mb-3">
             <label for="total" class="form-label">Total:</label>
             <input type="text" class="form-control" id="total" name="total" readonly>
